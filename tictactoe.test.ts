@@ -19,14 +19,23 @@ test('I can start a game', async () => {
     
 });
 
-// test(' clicking the upper left square adds an X to the square', async()=>{
-//     let button=await(await driver).findElement(By.id('handleClick'));
-//       await button.click();
+test("clicking the upper left square adds an X to the square", async() => {
+    let Left = await (await driver).findElement(By.id('cell-0'))
+    await Left.click()
+    await driver.sleep(2000)
+})
 
-// });
-// test(' clicking the upper right square adds an X to the square', async()=>{
-//     let button=await(await driver).findElement(By.id('start_game'));
-//       await button.click();
 
-// })
+
+test("clicking the upper right square adds an X to the square", async()=>{
+    let Right = await driver.findElement(By.id('cell-2'))
+    await Right.click()
+    await driver.sleep(2000)
+})
+
+test(' clicking the lower right square adds an X to the square', async()=>{
+    let loweright=await(await driver).findElement(By.id('cell-5'));
+      await loweright.click();
+
+})
 
